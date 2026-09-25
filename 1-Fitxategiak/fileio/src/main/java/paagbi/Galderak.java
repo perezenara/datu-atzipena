@@ -52,6 +52,5 @@ public class Galderak
         catch (IOException e) {
             System.out.println("Error: "+e.getMessage());
         }
-        
     }
 }
