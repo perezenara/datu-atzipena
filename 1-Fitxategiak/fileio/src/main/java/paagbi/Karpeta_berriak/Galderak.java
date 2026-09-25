@@ -1,4 +1,4 @@
-package paagbi;
+package paagbi.Karpeta_berriak;
 
 import java.io.BufferedReader;
 //Import java.io.File;
@@ -11,7 +11,7 @@ public class Galderak
     {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
             int i;
-            String Helbidea="", idatzi="", deskribapena="", Helbide_has="src/main/java/paagbi/";
+            String Helbidea="", idatzi="", deskribapena="", Helbide_has="src/main/java/paagbi/Karpeta_berriak/";
 
             System.out.println( "Zer zoaz deskribatzera? arraina (1), ugaztuna (2), barazkia (3) ala esnekia(4)?: " );
             i = Integer.parseInt(br.readLine());
