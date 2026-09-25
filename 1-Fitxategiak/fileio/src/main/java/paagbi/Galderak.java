@@ -1,49 +1,56 @@
 package paagbi;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
+//Import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
-
-/**
- * Hello world!
- *
- */
-public class Galderak 
+public class Galderak
 {
     public static void main( String[] args )
     {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in));) {
-            int i, ii;
-            String helbidea="", idatzi="", deskribapena="";
+            int i;
+            String Helbidea="", idatzi="", deskribapena="", Helbide_has="src/main/java/paagbi/";
 
             System.out.println( "Zer zoaz deskribatzera? arraina (1), ugaztuna (2), barazkia (3) ala esnekia(4)?: " );
-            i = br.readLine();
+            i = Integer.parseInt(br.readLine());
 
-            Switch(i) {
+            switch(i) {
                 case 1:
-                    helbidea="paagbi/animaliak/arrainak";
+                    Helbidea="animaliak/arrainak";
                     break;
                 case 2:
-                    helbidea="paagbi/animaliak/ugaztunak";
+                    Helbidea="animaliak/ugaztunak";
                     break;
                 case 3:
-                    helbidea="paagbi/elikagaiak/barazkiak";
+                    Helbidea="elikagaiak/barazkiak";
                     break;
                 case 4:
-                    helbidea="paagbi/elikagaiak/esnekiak";
+                    Helbidea="elikagaiak/esnekiak";
                     break;
-                default: break;
             }
 
             System.out.println("Zein?: ");
             idatzi = br.readLine();
+
+            /*File dir = new File(Helbidea);
+            System.out.println("Directorio existe? " + dir.exists());
+            System.out.println("Es directorio? " + dir.isDirectory());
+            boolean creado = dir.mkdirs();
+            System.out.println("mkdirs() resultado: " + creado);*/
+
+
             System.out.println("Nolakoa da?: ");
             deskribapena = br.readLine();
 
-            try(FileOutputStream out = new FileOutputStream(helbidea+"/"+idatzi+".txt")) {
-                out.write(deskribapena);
+            try(FileOutputStream out = new FileOutputStream(Helbide_has+Helbidea+"/"+idatzi+".txt");) {
+                out.write(deskribapena.getBytes());
             }
             
+        }
+        catch (IOException e) {
+            System.out.println("Error: "+e.getMessage());
         }
         
     }
