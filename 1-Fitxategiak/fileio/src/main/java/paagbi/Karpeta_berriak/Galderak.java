@@ -1,4 +1,5 @@
 package paagbi.Karpeta_berriak;
+//falta jata: karpeta baten edukia bistaratzea
 
 import java.io.BufferedReader;
 //Import java.io.File;
